@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <application
         android:name=".di.App"
         android:allowBackup="true"
@@ -14,15 +13,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <activity
+            android:name=".activities.ChartActivity"
+            android:parentActivityName=".activities.MainActivity">
+        </activity>
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-7548265822680117~3898451363" />
 
-
         <activity
+
             android:name=".activities.AboutActivity"
             android:parentActivityName=".activities.MainActivity" />
-
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

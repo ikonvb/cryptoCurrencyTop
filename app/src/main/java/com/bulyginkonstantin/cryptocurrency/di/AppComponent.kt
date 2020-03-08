@@ -1,6 +1,8 @@
 package com.bulyginkonstantin.cryptocurrency.di
 
+import com.bulyginkonstantin.cryptocurrency.activities.ChartActivity
 import com.bulyginkonstantin.cryptocurrency.activities.MainActivity
+import com.bulyginkonstantin.cryptocurrency.chart.LatestChart
 import com.bulyginkonstantin.cryptocurrency.fragments.CurrenciesListFragment
 import com.bulyginkonstantin.cryptocurrency.mvp.presenter.CurrenciesPresenter
 import com.bulyginkonstantin.cryptocurrency.mvp.presenter.LatestChartPresenter
@@ -15,4 +17,6 @@ interface AppComponent {
     fun inject(fragment: CurrenciesListFragment)
     fun inject(presenter: CurrenciesPresenter)
     fun inject(presenter: LatestChartPresenter)
+    fun inject(chart: LatestChart)
+    fun inject(activity: ChartActivity)
 }

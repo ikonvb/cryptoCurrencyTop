@@ -31,7 +31,7 @@ class RestModule {
     @Provides
     @Singleton
     @Named("COINGECKO_API")
-    fun provideGeckoRetrofit(gson: Gson, okHttpClient: OkHttpClient): Retrofit =
+    fun provideGeckoRetrofit(gson: Gson): Retrofit =
         Retrofit.Builder()
             .baseUrl("https://api.coingecko.com/api/v3/")
             .addConverterFactory(GsonConverterFactory.create(gson))
