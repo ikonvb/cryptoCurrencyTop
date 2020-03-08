@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 abstract class BaseAdapter<VH : BaseAdapter.BaseViewHolder> : RecyclerView.Adapter<VH>() {
 
-    private var items : ArrayList<Any> = ArrayList()
+    var items : ArrayList<Any> = ArrayList()
 
     override fun getItemCount(): Int {
         return items.size
