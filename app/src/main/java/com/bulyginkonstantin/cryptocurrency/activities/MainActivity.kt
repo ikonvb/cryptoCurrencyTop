@@ -1,4 +1,4 @@
-package com.bulyginkonstantin.cryptocurrency
+package com.bulyginkonstantin.cryptocurrency.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,8 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import com.bulyginkonstantin.cryptocurrency.activities.AboutActivity
+import com.bulyginkonstantin.cryptocurrency.R
+import com.bulyginkonstantin.cryptocurrency.fragments.CurrenciesListFragment
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
@@ -18,6 +19,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        if (savedInstanceState == null) {
+            supportFragmentManager
+                .beginTransaction()
+                .add(R.id.container, CurrenciesListFragment(), null)
+                .commit()
+        }
 
         MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713")
         mInterstitialAd = InterstitialAd(this)
